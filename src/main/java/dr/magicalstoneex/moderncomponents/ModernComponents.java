@@ -20,7 +20,7 @@ public class ModernComponents {
     private static Logger logger;
 
     @SuppressWarnings("unused")
-    @SidedProxy(clientSide = "dr.magicalstoneex.ocvc.client.ClientProxy", serverSide = "dr.magicalstoneex.ocvc.CommonProxy")
+    @SidedProxy(clientSide = "dr.magicalstoneex.moderncomponents.client.ClientProxy", serverSide = "dr.magicalstoneex.moderncomponents.CommonProxy")
     private static CommonProxy proxy;
 
     public static ModernComponents getInstance() {
