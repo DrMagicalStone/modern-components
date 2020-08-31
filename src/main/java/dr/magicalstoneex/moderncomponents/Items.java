@@ -1,22 +1,24 @@
 package dr.magicalstoneex.moderncomponents;
 
 import dr.magicalstoneex.moderncomponents.item.ItemVirtualInterface;
+import net.minecraft.client.resources.I18n;
+import net.minecraft.client.resources.LanguageManager;
 import net.minecraft.creativetab.CreativeTabs;
+import net.minecraft.item.ItemStack;
+import net.minecraft.util.text.TextComponentTranslation;
+import net.minecraft.util.text.translation.LanguageMap;
 
 public class Items {
 
 
     public static CreativeTabs getCreativeTab() {
         if(creativeTab == null){
-            for (CreativeTabs tab : CreativeTabs.CREATIVE_TAB_ARRAY) {
-                if(tab.getTabLabel().equals("OpenComputers")){
-                    creativeTab = tab;
+            creativeTab = new CreativeTabs(ModernComponents.MODID) {
+                @Override
+                public ItemStack getTabIconItem() {
+                    return new ItemStack(Items.itemVirtualInterface);
                 }
-            }
-            if(creativeTab == null){
-                creativeTab = CreativeTabs.REDSTONE;
-
-            }
+            };
         }
         return creativeTab;
     }
