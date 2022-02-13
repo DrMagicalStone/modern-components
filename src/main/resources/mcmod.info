@@ -1,16 +1,19 @@
 [
-{
-  "modid": "moderncomponents",
-  "name": "ModernComponents",
-  "description": "To create virtual components.",
-  "version": "${version}",
-  "mcversion": "${mcversion}",
-  "url": "",
-  "updateUrl": "",
-  "authorList": ["MagicalStoneEX", "flydragonEX"],
-  "credits": "We love the mod\"OpenComputers\"",
-  "logoFile": "",
-  "screenshots": [],
-  "dependencies": []
-}
+  {
+    "modid": "moderncomponents",
+    "name": "ModernComponents",
+    "description": "To create virtual components.",
+    "version": "${version}",
+    "mcversion": "${mcversion}",
+    "url": "",
+    "updateUrl": "",
+    "authorList": [
+      "MagicalStoneEX",
+      "flydragonEX"
+    ],
+    "credits": "We love the mod\"OpenComputers\"",
+    "logoFile": "",
+    "screenshots": [],
+    "dependencies": []
+  }
 ]

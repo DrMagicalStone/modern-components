@@ -1,18 +1,12 @@
 package dr.magicalstoneex.moderncomponents.client;
 
 import dr.magicalstoneex.moderncomponents.CommonProxy;
-import dr.magicalstoneex.moderncomponents.Items;
-import net.minecraft.client.renderer.block.model.ModelResourceLocation;
-import net.minecraft.item.Item;
-import net.minecraftforge.client.model.ModelLoader;
-import net.minecraftforge.event.RegistryEvent;
+import dr.magicalstoneex.moderncomponents.ConfigLoader;
+import net.minecraftforge.fml.common.event.FMLPreInitializationEvent;
 
 public class ClientProxy extends CommonProxy {
     @Override
-    public void registItems(RegistryEvent.Register<Item> event) {
-        super.registItems(event);
-        ModelLoader.setCustomModelResourceLocation(Items.itemVirtualInterface, 0,
-                new ModelResourceLocation(
-                        Items.itemVirtualInterface.getRegistryName(), "inventory"));
+    protected void loadConfig(FMLPreInitializationEvent event) {
+        ConfigLoader.loadClient(event);
     }
 }

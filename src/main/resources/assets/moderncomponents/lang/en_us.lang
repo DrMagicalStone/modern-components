@@ -1,2 +1,6 @@
-itemGroup.moderncomponents.name = ModernComponents
-item.virtualInterface.name=Virtual Interface Card
+itemGroup.moderncomponents=ModernComponents
+item.watchDog.name=Watch Dog
+item.arGlasses.name=AR Glasses
+item.waypointUpgrade.name=Waypoint Upgrade
+item.nearNavigationUpgrade.name=Near Navigation Upgrade
+item.advancedNavigationUpgrade.name=Advanced Navigation Upgrade

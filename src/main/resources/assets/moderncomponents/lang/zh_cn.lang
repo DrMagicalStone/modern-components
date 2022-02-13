@@ -1,2 +1,6 @@
-itemGroup.moderncomponents.name = ModernComponents
-item.virtualInterface.name=虚拟组件卡
+itemGroup.moderncomponents=现代化组件
+item.watchDog.name=看门狗
+item.arGlasses.name=AR 眼镜
+item.waypointUpgrade.name=路径点升级
+item.nearNavigationUpgrade.name=近距离导航升级
+item.advancedNavigationUpgrade.name=高级导航升级

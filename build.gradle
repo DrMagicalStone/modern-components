@@ -1,7 +1,6 @@
 buildscript {
     repositories {
-        maven { url = 'https://files.minecraftforge.net/maven' }
-        jcenter()
+        maven { url = 'https://maven.minecraftforge.net/' }
         mavenCentral()
     }
     dependencies {
@@ -15,7 +14,7 @@ apply plugin: 'eclipse'
 apply plugin: 'maven-publish'
 
 version = '0.1.0'
-group = 'dr.magicalstoneex.moderncomponents' // http://maven.apache.org/guides/mini/guide-naming-conventions.html
+group = 'dr.magicalstoneex' // http://maven.apache.org/guides/mini/guide-naming-conventions.html
 archivesBaseName = 'ModernComponents'
 
 sourceCompatibility = targetCompatibility = compileJava.sourceCompatibility = compileJava.targetCompatibility = '1.8' // Need this here so eclipse task generates correctly.
@@ -43,10 +42,6 @@ minecraft {
 
             // Recommended logging level for the console
             property 'forge.logging.console.level', 'debug'
-
-            property 'fml.coreMods.load', 'net.montoyo.mcef.coremod.ShutdownPatcher'
-
-
         }
 
         server {
@@ -56,22 +51,24 @@ minecraft {
 
             // Recommended logging level for the console
             property 'forge.logging.console.level', 'debug'
-
-            property 'fml.coreMods.load', 'net.montoyo.mcef.coremod.ShutdownPatcher'
-
         }
     }
 }
-repositories {
-    maven { url = "http://maven.cil.li/" }
-}
-dependencies {
-    implementation 'org.jetbrains:annotations:19.0.0'
 
+repositories {
+    maven { url = "https://maven.cil.li/" }
+
+    maven {
+        name = "JEI repo"
+        url "https://dvs1.progwml6.com/files/maven"
+    }
+}
+
+dependencies {
     // Specify the version of Minecraft to use, If this is any group other then 'net.minecraft' it is assumed
     // that the dep is a ForgeGradle 'patcher' dependency. And it's patches will be applied.
     // The userdev artifact is a special name and will get all sorts of transformations applied to it.
-    minecraft 'net.minecraftforge:forge:1.12.2-14.23.5.2854'
+    minecraft 'net.minecraftforge:forge:1.12.2-14.23.5.2860'
 
     // You may put jars on which you depend on in ./libs or you may define them like so..
     // compile "some.group:artifact:version:classifier"
@@ -80,7 +77,6 @@ dependencies {
     // Real examples
     // compile 'com.mod-buildcraft:buildcraft:6.0.8:dev'  // adds buildcraft to the dev env
     // compile 'com.googlecode.efficient-java-matrix-library:ejml:0.24' // adds ejml to the dev env
-    compile group: 'li.cil.oc', name: 'OpenComputers', version: 'MC1.12.2-1.7.5.192', classifier: 'api'
 
     // The 'provided' configuration is for optional dependencies that exist at compile-time but might not at runtime.
     // provided 'com.mod-buildcraft:buildcraft:6.0.8:dev'
@@ -91,7 +87,19 @@ dependencies {
     // For more info...
     // http://www.gradle.org/docs/current/userguide/artifact_dependencies_tutorial.html
     // http://www.gradle.org/docs/current/userguide/dependency_management.html
+
+    compile group: 'li.cil.oc', name: 'OpenComputers', version: 'MC1.12.2-1.7.5.192', classifier: 'api'
+
+    compileOnly "mezz.jei:jei_1.12.2:4.16.1.301:api"
+
+    //runtime "mezz.jei:jei_1.12.2:4.16.1.301"
+
+
+
     compile files('libs/OpenComputers-JNLua.jar', 'libs/OpenComputers-LuaJ.jar', 'libs/mcef-1.12.2-1.11-api.jar')
+
+    compileOnly files('libs/OpenComputers-MC1.12.2-1.7.5.192.jar')
+
 }
 
 // Example for how to get properties into the manifest for reading by the runtime..
