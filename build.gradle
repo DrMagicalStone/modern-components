@@ -62,6 +62,12 @@ repositories {
         name = "JEI repo"
         url "https://dvs1.progwml6.com/files/maven"
     }
+
+    maven {
+        // location of a maven mirror for JEI files, as a fallback
+        name = "ModMaven"
+        url "https://modmaven.dev"
+    }
 }
 
 dependencies {
@@ -94,11 +100,9 @@ dependencies {
 
     //runtime "mezz.jei:jei_1.12.2:4.16.1.301"
 
+    compile files('libs/mcef-1.12.2-1.11-api.jar')
 
-
-    compile files('libs/OpenComputers-JNLua.jar', 'libs/OpenComputers-LuaJ.jar', 'libs/mcef-1.12.2-1.11-api.jar')
-
-    compileOnly files('libs/OpenComputers-MC1.12.2-1.7.5.192.jar')
+    compileOnly files('libs/OpenComputers-MC1.12.2-1.7.5+815503914-dev.jar')
 
 }
 
